@@ -27,4 +27,16 @@ let () =
   test add 1. 2 3. "add 1. 2";
   test add 1 2. 3. "add 1 2.";
   test add 1. 2. 3. "add 1. 2.";
+  test sub 1 2 (-1.) "sub 1 2";
+  test sub 1. 2 (-1.) "sub 1. 2";
+  test sub 1 2. (-1.) "sub 1 2.";
+  test sub 1. 2. (-1.) "sub 1. 2.";
+  test mul 1 2 2. "mul 1 2";
+  test mul 1. 2 2. "mul 1. 2";
+  test mul 1 2. 2. "mul 1 2.";
+  test mul 1. 2. 2. "mul 1. 2.";
+  test div 1 2 0.5 "div 1 2";
+  test div 1. 2 0.5 "div 1. 2";
+  test div 1 2. 0.5 "div 1 2.";
+  test div 1. 2. 0.5 "div 1. 2.";
   print_res ()
