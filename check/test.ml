@@ -7,9 +7,9 @@ let err = ref 0
 let string_of_any x =
   let x = Obj.repr x in
   match Obj.tag x with
-  | 1000 -> string_of_int (Obj.magic x)
+  | 252 -> (Obj.magic x)
   | 253 -> string_of_float (Obj.magic x)
-  | 254 -> (Obj.magic x)
+  | 1000 -> string_of_int (Obj.magic x)
   | _ -> failwith "No string conversion"
 
 
@@ -36,15 +36,19 @@ let () =
   test add 1. 2 3. "add 1. 2";
   test add 1 2. 3. "add 1 2.";
   test add 1. 2. 3. "add 1. 2.";
+  test add "str" "ing" "string" "add \"str\" \"ing\"";
+
   test sub 1 2 (-1) "sub 1 2";
   test sub 1. 2 (-1.) "sub 1. 2";
   test sub 1 2. (-1.) "sub 1 2.";
   test sub 1. 2. (-1.) "sub 1. 2.";
+
   test mul 1 2 2 "mul 1 2";
   test mul 1. 2 2. "mul 1. 2";
   test mul 1 2. 2. "mul 1 2.";
   test mul 1. 2. 2. "mul 1. 2.";
-  test div 1 2 0.5 "div 1 2";
+
+  test div 1 2 0 "div 1 2";
   test div 1. 2 0.5 "div 1. 2";
   test div 1 2. 0.5 "div 1 2.";
   test div 1. 2. 0.5 "div 1. 2.";
