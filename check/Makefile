@@ -11,13 +11,13 @@ SRC=test.ml
 all: $(EASYCALC) $(SRC)
 	cp ../src/easyCalc.ml* .
 	$(OCAMLC) -o test $(LIB) $(SRC)
-	rm easyCalc.*
+	rm -f easyCalc.*
 	./test
 
 opt: $(EASYCALC) $(SRC)
 	$(OCAMLOPT) -o test $(LIB) $(SRC)
-	rm easyCalc.*
+	rm -f easyCalc.*
 	./test
 
 clean:
-	rm test *.cm*
+	rm -f test *.cm*
