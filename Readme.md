@@ -2,29 +2,38 @@
 
 It aims at making basic operations in OCaml polymorphic
 
-# Warning!
+## Warning!
 
 This should NOT be used. This is a toy project and is not safe:
-it uses OCaml internals to reach its goal. Can lead to segfaults or worst.
+it uses OCaml internals to reach its goal. Can lead to segfaults or worse.
 
 
-# Operations
+## Operations
 
-## Add
+### Add
 
 - int + int = int
 - float + int = int + float = float + float = float
+- string + string = string
 
-## Sub
+### Sub
 
 - int - int = int
 - float - int = int - float = float - float = float
 
-## Mul
+### Mul
 
 - int * int = int
 - float * int = int * float = float * float = float
 
-## Div
+### Div
 
-- int / int = float / int = int / float = float / float = float
+- int / int = int
+- float / int = int / float = float / float = float
+
+
+## Note
+
+The types noted above corresponds to the runtime types of the values.
+
+This means that the empty list `[]` can be added to `true` and the result will be `1`.
